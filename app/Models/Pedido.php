@@ -15,8 +15,9 @@ class Pedido extends Model
     }
 
      //Relacion muchos a muchos
+     //se ase el resto para que la llame como se utliza la pivote
     public function productos(){
-        return $this->belongsToMany('App\Models\producto');
+        return $this->belongsToMany('App\Models\producto','producto_pedidos', 'producto_id', 'pedido_id');
     }
 
     protected $fillable = [

@@ -11,7 +11,7 @@ class Producto extends Model
 
     //Relacion muchos a muchos
     public function pedidos(){
-        return $this->belongsToMany('App\Models\pedido');
+        return $this->belongsToMany('App\Models\pedido' ,'producto_pedidos', 'producto_id', 'pedido_id');
     }
 
     protected $fillable = [
